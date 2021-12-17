@@ -1,0 +1,39 @@
+---- Keterangan Latihan 45 (StoreGG 68 - Local Build and Checking) ----
+
+1. Cara Installasi
+   - npx create-next-app@latest storegg --typescript
+     - Untuk menginstall project next js dengan nama storegg
+   - npx sb init
+     - Untuk menginstall project storybook
+   - Untuk Menginstall Eslint di Next 12:
+     - npm install eslint --save-dev
+     - npm install eslint-config-airbnb --save-dev
+     - npm install eslint-config-next --save-dev
+     - npm install eslint-plugin-import --save-dev
+     - npm install eslint-plugin-jsx-a11y --save-dev
+     - npm install eslint-plugin-react --save-dev
+     - npm install eslint-plugin-react-hooks --save-dev
+     - npm install @typescript-eslint/eslint-plugin@4.30.0 --save-dev
+     - npm install @typescript-eslint/parser@4.30.0 --save-dev
+   - npm install aos
+   - npm install @types/aos
+     - Untuk menginstall AOS
+   - npm install classnames
+   - npm install @types/classnames
+     - Untuk menginstall classnames
+   - npm install axios
+     - Untuk mengintegerasikan API ke project Reat JS
+   - npm i react-number-format
+     - Untuk membuat format number pada saat Integrasi API
+   - npm i react-toastify
+     - Untuk memberi pesan error pada project react js
+   - npm i js-cookie
+     - Untuk membuat cookie pada project react js
+   - npm i jwt-decode
+     - Untuk mendecode atau mentranslate isi dari jwt token
+
+2. Cara Menjalankan
+   - npm run dev
+     - Untuk menjalanakn project next js
+   - npm run storybook
+     - Untuk menjalanakn storybook

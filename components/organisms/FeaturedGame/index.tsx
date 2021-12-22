@@ -27,11 +27,10 @@ export default function FeaturedGame() {
                   data-aos="fade-up"
                 >
                     {gameList.map((item: GameItemTypes) => (
-                      // eslint-disable-next-line no-underscore-dangle
                       <GameItem
                         key={item._id}
                         title={item.name}
-                        category={item.name}
+                        category={item.category.name}
                         thumbnail={`${API_IMG}/${item.thumbnail}`}
                         id={item._id}
                       />

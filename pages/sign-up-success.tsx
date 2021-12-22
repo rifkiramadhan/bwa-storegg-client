@@ -1,7 +1,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import Link from 'next/dist/client/link';
+import { useEffect } from 'react';
 
 export default function SignUpSuccess() {
+  useEffect(() => {
+    localStorage.removeItem('user-form');
+  }, []);
   return (
         <section className="sign-up-success mx-auto pt-md-179 pb-md-179 pt-150 pb-100">
         <div className="container-fluid">

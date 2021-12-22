@@ -1,7 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import Link from 'next/link';
+import { useEffect } from 'react';
 
 export default function CompleteCheckout() {
+  useEffect(() => {
+    localStorage.removeItem('data-item');
+    localStorage.removeItem('data-topup');
+  }, []);
   return (
         <section className="complete-checkout mx-auto pt-lg-145 pb-lg-145 pt-100 pb-80">
         <div className="container-fluid">
@@ -242,7 +247,7 @@ export default function CompleteCheckout() {
               </Link>
                 <a
                   className="btn btn-whatsapp fw-medium text-lg color-palette-1 rounded-pill"
-                  href="/https://wa.me/6282122116992?text=Saya%20sudah%20melakukan%20pembayaran%20untuk%20TopUp%20Voucher"
+                  href="https://wa.me/6282122116992?text=Saya%20sudah%20melakukan%20pembayaran%20untuk%20TopUp%20Voucher"
                   role="button"
                 >WhatsApp ke Admin
                 </a>

@@ -13,7 +13,7 @@ import { updateProfile } from '../../services/member';
 
 interface UserStateTypes {
   id: string;
-  username: string;
+  name: string;
   email: string;
   avatar: any;
 }
@@ -22,7 +22,7 @@ interface UserStateTypes {
 export default function EditProfile() {
   const [user, setUser] = useState<UserStateTypes>({
     id: '',
-    username: '',
+    name: '',
     email: '',
     avatar: '',
   });
@@ -44,7 +44,7 @@ export default function EditProfile() {
     const data = new FormData();
 
     data.append('image', user.avatar);
-    data.append('username', user.username);
+    data.append('name', user.name);
     const response = await updateProfile(data, user.id);
 
     if (response.error) {
@@ -54,6 +54,8 @@ export default function EditProfile() {
       router.push('/sign-in');
     }
   };
+
+  const IMG = process.env.NEXT_PUBLIC_IMG;
   return (
         <section className="edit-profile overflow-auto">
         <SideBar activeMenu="settings" />
@@ -66,7 +68,7 @@ export default function EditProfile() {
                             <div className="image-upload">
                                 <label htmlFor="avatar">
                                     {imagePreview === '/' ? (
-                                      <img src={`${process.env.NEXT_PUBLIC_IMG}/${user.avatar}`} className="rounded-circle" alt="icon upload" width={90} height={90} />
+                                      <img src={`${IMG}/${user.avatar}`} className="rounded-circle" alt="icon upload" width={90} height={90} />
                                     ) : (
                                       <img src={imagePreview} className="rounded-circle" alt="icon upload" width={90} height={90} />
                                     )}
@@ -75,7 +77,7 @@ export default function EditProfile() {
                                   id="avatar"
                                   type="file"
                                   name="avatar"
-                                  accept="image/png, image/jpeg, image/jpg"
+                                  accept="image/png, image/jpeg"
                                   onChange={(event) => {
                                     const img = event.target.files![0];
                                     setImagePreview(URL.createObjectURL(img));
@@ -90,10 +92,10 @@ export default function EditProfile() {
                         <div className="pt-30">
                             <Input
                               label="Full Name"
-                              value={user.username}
+                              value={user.name}
                               onChange={(event) => setUser({
                                 ...user,
-                                username: event.target.value,
+                                name: event.target.value,
                               })}
                             />
                         </div>

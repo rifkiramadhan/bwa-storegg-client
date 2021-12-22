@@ -57,7 +57,7 @@ export default function SignUpPhoto() {
     } else {
       toast.success('Registrasi Akun Berhasil');
       router.push('/sign-up-success');
-      localStorage.removeItem('user-form');
+      // localStorage.removeItem('user-form');
     }
   };
   return (

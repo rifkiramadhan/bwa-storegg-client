@@ -2,6 +2,6 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ['bwa-storegg-pro.herokuapp.com'],
+    domains: ['storegg-pro-server.herokuapp.com'],
   },
 };

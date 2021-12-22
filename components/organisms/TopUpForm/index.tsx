@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable no-console */
 import { useState } from 'react';
 import { useRouter } from 'next/router';
@@ -73,9 +74,7 @@ export default function TopUpForm(props: TopUpFormProps) {
             <div className="row justify-content-between">
                 {nominals.map((nominal) => (
                     <NominalItem
-                      // eslint-disable-next-line no-underscore-dangle
                       key={nominal._id}
-                      // eslint-disable-next-line no-underscore-dangle
                       _id={nominal._id}
                       coinQuantity={nominal.coinQuantity}
                       coinName={nominal.coinName}
@@ -92,7 +91,7 @@ export default function TopUpForm(props: TopUpFormProps) {
                 <div className="row justify-content-between">
                    {payments.map((payment) => payment.banks.map((bank) => (
                        <PaymentItem
-                         // eslint-disable-next-line no-underscore-dangle
+                         key={bank._id}
                          bankID={bank._id}
                          type={payment.type}
                          name={bank.bankName}

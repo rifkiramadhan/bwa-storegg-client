@@ -52,7 +52,7 @@ export interface JWTPayloadTypes {
 }
 
 export interface CheckoutTypes {
-    vouchers: string;
+    voucher: string;
     nominal: string;
     payment: string;
     bank: string;

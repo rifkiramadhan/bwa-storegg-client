@@ -1,10 +1,10 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable no-underscore-dangle */
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/router';
 import { setCheckout } from '../../../services/player';
 
-/* eslint-disable jsx-a11y/label-has-associated-control */
 export default function CheckoutConfirmation() {
   const [checkbox, setCheckBox] = useState(false);
   const router = useRouter();
@@ -21,7 +21,7 @@ export default function CheckoutConfirmation() {
       return;
     }
     const data = {
-      vouchers: dataItem._id,
+      voucher: dataItem._id,
       nominal: dataTopUp.nominalItem._id,
       payment: dataTopUp.paymentItem.payment._id,
       bank: dataTopUp.paymentItem.bank._id,
@@ -34,7 +34,7 @@ export default function CheckoutConfirmation() {
       toast.error(response.message);
     } else {
       router.push('/complete-checkout');
-      toast.success('Checkout Berhasil');
+      toast.success('Checkout Anda Berhasil');
     }
   };
 

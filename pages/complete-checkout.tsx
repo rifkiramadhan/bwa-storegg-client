@@ -245,12 +245,16 @@ export default function CompleteCheckout() {
                 >My Dashboard
                 </a>
               </Link>
+              <Link href="https://wa.me/6282122116992?text=Saya%20sudah%20melakukan%20pembayaran%20untuk%20TopUp%20Voucher">
                 <a
                   className="btn btn-whatsapp fw-medium text-lg color-palette-1 rounded-pill"
                   href="https://wa.me/6282122116992?text=Saya%20sudah%20melakukan%20pembayaran%20untuk%20TopUp%20Voucher"
+                  target="_blank"
                   role="button"
+                  rel="noreferrer"
                 >WhatsApp ke Admin
                 </a>
+              </Link>
             </div>
         </div>
         </section>

@@ -16,7 +16,7 @@ export default function TransactionDetailContent(props: TransactionDetailContent
     <main className="container-fluid checkout mx-auto pt-md-100 pb-md-145 pt-30 pb-30">
         <div className="ps-lg-0">
             {/* <h2 className="text-2xlfw-bold color-palette-1 mt-4 mb-30">Details #{data._id}</h2> */}
-            <h2 className="text-2xlfw-bold text-center color-palette-1 mt-4 mb-30">Details Page</h2>
+            <h2 className="text-3xl fw-bold text-center color-palette-1 mt-4 mb-30">Details Page</h2>
             <div className="details">
                 <div className="main-content main-content-card overflow-auto">
                     <section className="checkout mx-auto">
@@ -48,7 +48,7 @@ export default function TransactionDetailContent(props: TransactionDetailContent
                         <div className="purchase pt-30">
                             <h2 className="fw-bold text-xl color-palette-1 mb-20">Purchase Details</h2>
                             <Row label="Your Game ID" value={data.accountUser} />
-                            <Row label="Order ID" value={data._id} />
+                            <Row label="Order ID" value={`#${data._id}`} />
                             <Row label="Item" value={`${data.historyVoucherTopup.coinQuantity} ${data.historyVoucherTopup.coinName}`} />
                             <Row label="Price" value={data.historyVoucherTopup.price} />
                             <Row label="Tax 10%" value={data.tax} />

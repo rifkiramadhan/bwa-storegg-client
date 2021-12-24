@@ -44,7 +44,7 @@ export default function CheckoutDetail() {
                     {dataTopUp.verifyID}
                 </span>
             </p>
-            <p className="text-lg color-palette-1 mb-20">Order ID <span className="purchase-details">#GG001</span></p>
+            <p className="text-lg color-palette-1 mb-20">Order ID <span className="purchase-details">Menunggu Konfirmasi</span></p>
             <p className="text-lg color-palette-1 mb-20">Item <span className="purchase-details">{dataTopUp.nominalItem.coinQuantity} {dataTopUp.nominalItem.coinName}</span></p>
             <p className="text-lg color-palette-1 mb-20">
                 Price

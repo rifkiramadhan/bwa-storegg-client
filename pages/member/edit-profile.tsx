@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
@@ -16,6 +17,7 @@ interface UserStateTypes {
   name: string;
   email: string;
   avatar: any;
+  phoneNumber: string;
 }
 
 /* eslint-disable jsx-a11y/no-redundant-roles */
@@ -25,9 +27,12 @@ export default function EditProfile() {
     name: '',
     email: '',
     avatar: '',
+    phoneNumber: '',
   });
 
   const [imagePreview, setImagePreview] = useState('/');
+  const [loading, setLoading] = useState(false);
+
   const router = useRouter();
 
   useEffect(() => {
@@ -41,11 +46,23 @@ export default function EditProfile() {
   }, []);
 
   const onSubmit = async () => {
+    setLoading(true);
+
     const data = new FormData();
 
     data.append('image', user.avatar);
     data.append('name', user.name);
+    data.append('phoneNumber', user.phoneNumber);
     const response = await updateProfile(data, user.id);
+
+    if (user.name === '') {
+      toast.error('Silahkan Refresh dan Input Nama Lengkap Anda!');
+      return false;
+    }
+    if (user.phoneNumber === '') {
+      toast.error('Silahkan Refresh dan Input Nomor Telepon Anda!');
+      return false;
+    }
 
     if (response.error) {
       toast.error(response.message);
@@ -53,6 +70,7 @@ export default function EditProfile() {
       Cookies.remove('token');
       router.push('/sign-in');
     }
+    setLoading(false);
   };
 
   const IMG = process.env.NEXT_PUBLIC_IMG;
@@ -100,18 +118,46 @@ export default function EditProfile() {
                             />
                         </div>
                         <div className="pt-30">
-                            <Input label="Email Address" disabled value={user.email} />
+                            <Input
+                              label="Email Address"
+                              value={user.email}
+                              onChange={(event) => setUser({
+                                ...user,
+                                email: event.target.value,
+                              })}
+                              disabled
+                            />
                         </div>
-                        {/* <div className="pt-30">
-                            <Input label="Phone" />
-                        </div> */}
+                        <div className="pt-30">
+                            <Input
+                              placeholder="Enter your phone"
+                              label="Phone"
+                              value={user.phoneNumber}
+                              onChange={(event) => {
+                                return setUser({
+                                  ...user,
+                                  phoneNumber: event.target.value,
+                                });
+                              }}
+                            />
+                        </div>
                         <div className="button-group d-flex flex-column pt-50">
-                            <button
-                              type="button"
-                              className="btn btn-save fw-medium text-lg text-white rounded-pill"
-                              onClick={onSubmit}
-                            >Save My Profile
-                            </button>
+                          {loading
+                            ? (
+                              <button
+                                type="button"
+                                className="btn btn-save fw-medium text-lg text-white rounded-pill"
+                              >Loading...
+                              </button>
+                            )
+                            : (
+                              <button
+                                type="button"
+                                className="btn btn-save fw-medium text-lg text-white rounded-pill"
+                                onClick={onSubmit}
+                              >Save My Profile
+                              </button>
+                            )}
                         </div>
                     </form>
                 </div>

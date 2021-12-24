@@ -11,9 +11,12 @@ import { setLogin } from '../../../services/auth';
 export default function SignInForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
+
   const router = useRouter();
 
   const onSubmit = async () => {
+    setLoading(true);
     const data = {
       email,
       password,
@@ -33,6 +36,7 @@ export default function SignInForm() {
         router.push('/');
       }
     }
+    setLoading(false);
   };
 
   return (
@@ -69,7 +73,7 @@ export default function SignInForm() {
                   type="button"
                   className="btn btn-sign-in fw-medium text-lg text-white rounded-pill mb-16"
                   onClick={onSubmit}
-                >Continue to Sign In
+                >{loading ? 'Loading...' : 'Continue to Sign In'}
                 </button>
                 <Link href="/sign-up">
                   <a

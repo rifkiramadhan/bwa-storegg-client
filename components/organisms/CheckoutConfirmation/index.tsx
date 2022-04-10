@@ -8,8 +8,11 @@ import { setCheckout } from '../../../services/player';
 export default function CheckoutConfirmation() {
   const [checkbox, setCheckBox] = useState(false);
   const router = useRouter();
+  const [loading, setLoading] = useState(false);
 
   const onSubmit = async () => {
+    setLoading(true);
+
     const dataItemLocal = localStorage.getItem('data-item');
     const dataTopUpLocal = localStorage.getItem('data-topup');
 
@@ -17,7 +20,7 @@ export default function CheckoutConfirmation() {
     const dataTopUp = JSON.parse(dataTopUpLocal!);
 
     if (!checkbox) {
-      toast.error('Pastikan Anda telah menchecklist persetujuan pembayaran Top Up!');
+      toast.error('Silahkan Refresh kembali dan Pastikan Anda telah menchecklist persetujuan pembayaran Top Up!');
       return;
     }
     const data = {
@@ -45,12 +48,26 @@ export default function CheckoutConfirmation() {
             <span className="checkmark" />
         </label>
         <div className="d-md-block d-flex flex-column w-100 pt-50">
+          {
+            loading ? (
+            <button
+              className="btn btn-confirm-payment rounded-pill fw-medium text-white border-0 text-lg"
+              type="button"
+              disabled
+            >
+            <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true" />
+              {' '}
+              Loading..
+            </button>
+            ) : (
             <button
               className="btn btn-confirm-payment rounded-pill fw-medium text-white border-0 text-lg"
               type="button"
               onClick={onSubmit}
             >Confirm Payment
             </button>
+            )
+          }
         </div>
     </>
   );

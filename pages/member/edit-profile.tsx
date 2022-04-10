@@ -147,7 +147,11 @@ export default function EditProfile() {
                               <button
                                 type="button"
                                 className="btn btn-save fw-medium text-lg text-white rounded-pill"
-                              >Loading...
+                                disabled
+                              >
+                              <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true" />
+                              {' '}
+                              Loading...
                               </button>
                             )
                             : (

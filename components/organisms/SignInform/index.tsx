@@ -69,12 +69,26 @@ export default function SignInForm() {
                 />
             </div>
             <div className="button-group d-flex flex-column mx-auto pt-50">
-                <button
-                  type="button"
-                  className="btn btn-sign-in fw-medium text-lg text-white rounded-pill mb-16"
-                  onClick={onSubmit}
-                >{loading ? 'Loading...' : 'Continue to Sign In'}
-                </button>
+                {loading
+                  ? (
+                  <button
+                    type="button"
+                    className="btn btn-sign-in fw-medium text-lg text-white rounded-pill mb-16"
+                    disabled
+                  >
+                    <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true" />
+                    {' '}
+                    Loading...
+                  </button>
+                  )
+                  : (
+                  <button
+                    type="button"
+                    className="btn btn-sign-in fw-medium text-lg text-white rounded-pill mb-16"
+                    onClick={onSubmit}
+                  >Continue to Sign In
+                  </button>
+                  )}
                 <Link href="/sign-up">
                   <a
                     className="btn btn-sign-up fw-medium text-lg color-palette-1 rounded-pill"

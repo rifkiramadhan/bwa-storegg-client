@@ -132,7 +132,10 @@ export default function SignUpPhoto() {
                         <button
                           type="button"
                           className="btn btn-create fw-medium text-lg text-white rounded-pill mb-16"
-                        >Loading...
+                          disabled
+                        ><span className="spinner-border spinner-border-sm" role="status" aria-hidden="true" />
+                        {' '}
+                        Loading...
                         </button>
                         )
                         : (

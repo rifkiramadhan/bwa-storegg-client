@@ -1,9 +1,7 @@
-/* eslint-disable no-console */
 import { useState } from 'react';
 import cx from 'classnames';
 import { useRouter } from 'next/router';
 
-/* eslint-disable jsx-a11y/label-has-associated-control */
 export default function SignUpForm() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -72,8 +70,7 @@ export default function SignUpForm() {
                   className="btn btn-sign-in fw-medium text-lg color-palette-1 rounded-pill"
                   href="/sign-in"
                   role="button"
-                >Sign
-                    In
+                >Sign In
                 </a>
             </div>
         </>

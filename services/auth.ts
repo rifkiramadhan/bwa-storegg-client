@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import callAPI from '../config/api';
 import { LoginTypes } from './data-types';
 

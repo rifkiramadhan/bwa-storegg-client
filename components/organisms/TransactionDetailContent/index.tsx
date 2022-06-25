@@ -1,6 +1,3 @@
-/* eslint-disable max-len */
-/* eslint-disable jsx-a11y/anchor-is-valid */
-/* eslint-disable no-underscore-dangle */
 import Link from 'next/link';
 import { HistoryTransactionTypes } from '../../../services/data-types';
 import Row from './Row';
@@ -15,7 +12,6 @@ export default function TransactionDetailContent(props: TransactionDetailContent
   return (
     <main className="container-fluid checkout mx-auto pt-md-100 pb-md-145 pt-30 pb-30">
         <div className="ps-lg-0">
-            {/* <h2 className="text-2xlfw-bold color-palette-1 mt-4 mb-30">Details #{data._id}</h2> */}
             <h2 className="text-3xl fw-bold text-center color-palette-1 mt-4 mb-30">Details Page</h2>
             <div className="details">
                 <div className="main-content main-content-card overflow-auto">

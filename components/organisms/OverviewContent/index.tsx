@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 import { useCallback, useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import { HistoryTransactionTypes, TopUpCategoriesTypes } from '../../../services/data-types';

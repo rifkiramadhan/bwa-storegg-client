@@ -1,5 +1,3 @@
-/* eslint-disable no-underscore-dangle */
-/* eslint-disable no-console */
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { toast } from 'react-toastify';
@@ -12,10 +10,7 @@ interface TopUpFormProps {
     payments: PaymentTypes[]
 }
 
-/* eslint-disable jsx-a11y/label-has-associated-control */
 export default function TopUpForm(props: TopUpFormProps) {
-  // eslint-disable-next-line react/prop-types
-
   const [verifyID, setVerifyID] = useState('');
   const [bankAccountName, setBankAccountName] = useState('');
   const [nominalItem, setNominalItem] = useState({});

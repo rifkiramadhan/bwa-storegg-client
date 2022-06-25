@@ -71,13 +71,13 @@ export default function CheckoutDetail() {
             </p>
             <p className="text-lg color-palette-1 mb-20">Total
             <span className="purchase-details color-palette-4">
-            <NumberFormat
-              value={totalPrice}
-              prefix="Rp. "
-              displayType="text"
-              thousandSeparator="."
-              decimalSeparator=","
-            />
+              <NumberFormat
+                value={totalPrice}
+                prefix="Rp. "
+                displayType="text"
+                thousandSeparator="."
+                decimalSeparator=","
+              />
             </span>
             </p>
         </div>

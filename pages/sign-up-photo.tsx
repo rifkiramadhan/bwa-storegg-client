@@ -1,6 +1,3 @@
-/* eslint-disable consistent-return */
-/* eslint-disable no-underscore-dangle */
-/* eslint-disable no-console */
 import Image from 'next/image';
 import { useEffect, useCallback, useState } from 'react';
 import { useRouter } from 'next/router';
@@ -9,7 +6,6 @@ import { setSignUp } from '../services/auth';
 import { getGameCategory } from '../services/player';
 import { CategoryTypes } from '../services/data-types';
 
-/* eslint-disable jsx-a11y/label-has-associated-control */
 export default function SignUpPhoto() {
   const [categories, setCategories] = useState([]);
   const [favorite, setFavorite] = useState('');
@@ -40,6 +36,8 @@ export default function SignUpPhoto() {
   }, []);
 
   const onSubmit = async () => {
+    setLoading(true);
+
     const getLocalForm = await localStorage.getItem('user-form');
     const form = JSON.parse(getLocalForm!);
     const data = new FormData();
@@ -53,8 +51,6 @@ export default function SignUpPhoto() {
     data.append('role', 'user');
     data.append('status', 'Y');
     data.append('favorite', favorite);
-
-    setLoading(true);
 
     if (favorite === '') {
       toast.error('Silahkan Refresh Kembali dan Pilih Game Favorite Anda!');

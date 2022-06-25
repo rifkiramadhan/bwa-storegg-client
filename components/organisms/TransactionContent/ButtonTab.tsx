@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-
 import cx from 'classnames';
 
 interface ButtonTabProps {

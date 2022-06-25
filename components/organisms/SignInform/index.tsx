@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import { useState } from 'react';
 import Link from 'next/link';
 import { toast } from 'react-toastify';

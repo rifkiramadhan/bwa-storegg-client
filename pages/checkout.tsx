@@ -3,7 +3,6 @@ import CheckoutConfirmation from '../components/organisms/CheckoutConfirmation';
 import CheckoutDetail from '../components/organisms/CheckoutDetail';
 import CheckoutItem from '../components/organisms/CheckoutItem';
 
-/* eslint-disable jsx-a11y/label-has-associated-control */
 export default function Checkout() {
   return (
         <section className="checkout mx-auto pt-md-100 pb-md-145 pt-30 pb-30">

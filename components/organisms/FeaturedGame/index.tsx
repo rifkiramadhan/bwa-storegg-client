@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 import { useCallback, useEffect, useState } from 'react';
 import GameItem from '../../molecules/GameItem';
 import { getFeaturedGame } from '../../../services/player';

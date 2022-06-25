@@ -1,5 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
-/* eslint-disable import/no-extraneous-dependencies */
 import { Meta } from '@storybook/react';
 import GameItem, { GameItemProps } from '../../../../components/molecules/GameItem';
 

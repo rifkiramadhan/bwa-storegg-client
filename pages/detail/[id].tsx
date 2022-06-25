@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 import { useEffect } from 'react';
 import Footer from '../../components/organisms/Footer';
 import Navbar from '../../components/organisms/Navbar';
@@ -13,7 +12,6 @@ interface DetailProps {
   payments: PaymentTypes[];
 }
 
-/* eslint-disable jsx-a11y/label-has-associated-control */
 export default function Detail({ dataItem, nominals, payments }: DetailProps) {
   useEffect(() => {
     localStorage.setItem('data-item', JSON.stringify(dataItem));

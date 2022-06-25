@@ -37,7 +37,16 @@
         "jsx": "never",
         "ts": "never",
         "tsx": "never"
-    }]
+      }],
+      "react/jsx-props-no-spreading": "off",
+      "jsx-a11y/anchor-is-valid": "off",
+      "no-underscore-dangle": "off",
+      "jsx-a11y/label-has-associated-control": "off",
+      "jsx-a11y/click-events-have-key-events": "off",
+      "jsx-a11y/no-static-element-interactions": "off",
+      "no-shadow": "off",
+      "consistent-return": "off",
+      "import/no-extraneous-dependencies": "off"
   },
     "settings": {
         "import/extensions": [
